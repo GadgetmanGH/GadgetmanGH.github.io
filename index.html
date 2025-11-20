@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TiguerSound | Audio Engineering, Mixing & Mastering</title>
     <meta name="description" content="Mixing, mastering, and recording services.">
-    <!-- Clean sans-serif fonts only -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #0f0f0f;
             --paper: #111111;
-  --text: #e8e8e8;
+            --text: #e8e8e8;
             --text-light: #bbbbbb;
             --gold: #d4af37;
         }
@@ -34,7 +33,6 @@
             border-bottom: 1px solid var(--gold);
         }
         .logo {
-            font-family: 'Inter', sans-serif;
             font-size: 7rem;
             font-weight: 800;
             letter-spacing: 10px;
@@ -42,7 +40,6 @@
             text-transform: uppercase;
         }
         .logo-sub {
-            font-family: 'Inter', sans-serif;
             font-size: 1.4rem;
             font-weight: 500;
             letter-spacing: 8px;
@@ -81,20 +78,48 @@
             background: var(--paper);
         }
 
-        /* About section with your background photo */
+        /* About section – lighter overlay + text on the left */
         #about {
-            background: linear-gradient(rgba(15,15,15,0.75), rgba(15,15,15,0.85)), url('Dave - Darkhorse.jpg') center/cover no-repeat fixed;
+            background: linear-gradient(to right, rgba(15,15,15,0.92) 30%, rgba(15,15,15,0.45) 70%), 
+                        url('Dave-Darkhores.jpg') center/cover no-repeat fixed;
             background-attachment: fixed;
+            display: flex;
+            align-items: center;
+        }
+        .about-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .about-text {
+            padding-right: 40px;
+        }
+        .about-text h2 {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        .about-text h2::before,
+        .about-text h2::after {
+            left: 0;
+            transform: none;
+        }
+        .about-image-space {
+            height: 100%;
         }
 
         h2 {
-            font-family: 'Inter', sans-serif;
             font-size: 4rem;
             font-weight: 700;
             text-align: center;
             margin-bottom: 35px;
             color: white;
             position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1100px;
         }
         h2::before {
             content: '';
@@ -124,9 +149,9 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns5 repeat(auto-fit, minmax(300px, 1fr));
             gap: 50px;
-            max-width: 1100px;
+            max-width: 1100;
             margin: 0 auto;
         }
         .card {
@@ -140,7 +165,6 @@
             transform: translateY(-10px); 
         }
         .card h3 {
-            font-family: 'Inter', sans-serif;
             font-size: 2rem;
             font-weight: 700;
             color: var(--gold);
@@ -179,7 +203,6 @@
             text-align: center; 
         }
         .email {
-            font-family: 'Inter', sans-serif;
             font-size: 2.6rem;
             font-weight: 600;
             color: var(--gold);
@@ -202,12 +225,33 @@
             font-size: 0.95rem;
             border-top: 1px solid var(--gold);
         }
+        @media (max-width: 992px) {
+            .about-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-text {
+                padding-right: 0;
+                text-align: center;
+            }
+            .about-text h2 {
+                text-align: center;
+            }
+            .about-text h2::before,
+            .about-text h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            #about {
+                background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.85)), url('Dave-Darkhores.jpg') center/cover no-repeat fixed;
+            }
+        }
         @media (max-width: 768px) {
             .logo { font-size: 4.8rem; letter-spacing: 5px; }
             .logo-sub { font-size: 1.2rem; letter-spacing: 6px; }
             h2 { font-size: 3.2rem; }
             section { padding: 80px 8%; }
-            #about { background-attachment: scroll; } /* Better mobile experience */
+            #about { background-attachment: scroll; }
         }
     </style>
 </head>
@@ -225,10 +269,15 @@
     </header>
 
     <section id="about">
-        <h2>About</h2>
-        <div class="content">
-            <p>TiguerSound is an audio engineering studio led by engineer <strong>Dave Tigue</strong>.<br>
-                Trusted by those who demand the highest standards in modern audio production.</p>
+        <div class="about-wrapper">
+            <div class="about-text">
+                <h2>About</h2>
+                <div style="font-size:1.2rem; line-height:1.8;">
+                    <p>TiguerSound is an audio engineering studio led by engineer <strong>Dave Tigue</strong>.</p>
+                    <p>Trusted by those who demand the highest standards in modern audio production.</p>
+                </div>
+            </div>
+            <div class="about-image-space"></div> <!-- Empty column so the photo shows through on the right -->
         </div>
     </section>
 
@@ -252,7 +301,7 @@
                 </ul>
             </div>
             <div class="card">
-                <h3>Production & Editing</h3>
+                <h3>Recording, Production & Editing</h3>
                 <ul>
                     <li>Studio musicians</li>
                     <li>Sound design & beat production</li>
