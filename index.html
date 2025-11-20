@@ -80,7 +80,6 @@
             background: linear-gradient(to right, rgba(15,15,15,0.95) 0%, rgba(15,15,15,0.95) 45%, rgba(15,15,15,0.35) 100%),
                         url('Dave - Darkhorse.jpg') right center / cover no-repeat fixed;
             background-attachment: fixed;
-            position: relative;
         }
         .about-container {
             max-width: 1400px;
@@ -99,16 +98,15 @@
             font-size: 1.2rem;
             line-height: 1.8;
         }
-        .about-image-space {
-            /* empty column so the photo shows on the right */
-        }
 
+        /* ====================== SECTION HEADINGS (smaller & centered) ====================== */
         h2 {
-            font-size: 4rem;
+            font-size: 3.2rem;          /* Reduced from 4rem */
             font-weight: 700;
             color: white;
+            text-align: center;
             position: relative;
-            margin-bottom: 35px;
+            margin-bottom: 60px;
         }
         h2::before {
             content: '';
@@ -185,7 +183,7 @@
             top: 4px;
         }
 
-        /* ====================== CONTACT & FOOTER ====================== */
+        /* ====================== CONTACT & BOOKING ====================== */
         #contact { text-align: center; }
         .email {
             font-size: 2.6rem;
@@ -212,9 +210,7 @@
 
         /* ====================== RESPONSIVE ====================== */
         @media (max-width: 992px) {
-            .about-container {
-                grid-template-columns: 1fr;
-            }
+            .about-container { grid-template-columns: 1fr; }
             .about-text { text-align: center; }
             #about {
                 background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.85)), url('Dave - Darkhorse.jpg') center/cover no-repeat fixed;
@@ -223,7 +219,7 @@
         @media (max-width: 768px) {
             .logo { font-size: 4.8rem; letter-spacing: 5px; }
             .logo-sub { font-size: 1.2rem; }
-            h2 { font-size: 3.2rem; }
+            h2 { font-size: 2.8rem; }
             section { padding: 80px 8%; }
             .grid { grid-template-columns: 1fr; }
             #about { background-attachment: scroll; }
@@ -288,15 +284,17 @@
         </div>
     </section>
 
+    <!-- BOOKING SECTION -->
     <section id="clients">
         <h2>Let's chat about your project!</h2>
-        <div style="text-align:center; font-size:1.3rem; margin-top:30px;">
+        <div style="text-align:center; font-size:1.3rem; margin-top:40px;">
             <a href="https://calendar.app.google/woB1pYK5DEzpw35o8" target="_blank" rel="noopener noreferrer" style="color:var(--gold); text-decoration:none; border-bottom:2px solid var(--gold);">
                 Book a free consultation →
             </a>
         </div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section id="contact">
         <h2>Contact</h2>
         <div class="email">
