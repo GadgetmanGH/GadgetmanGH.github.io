@@ -3,158 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiguer Sound | Professional Audio Engineering</title>
-    <meta name="description" content="Premium mixing, mastering, recording, and sound design services based in New York. Over 15 years delivering world-class audio for artists, labels, film, and brands.">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Tiguer Sound | Professional Audio Engineering & Mastering</title>
+    <meta name="description" content="Premium mixing, mastering, and recording services based in New York. Over 15 years delivering world-class audio for artists, labels, film, and brands.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0a0a;
-            --accent: #00ff9d; /* Electric teal/green for highlights */
-            --text: #e0e0e0;
-            --text-light: #aaaaaa;
-            --dark-gray: #1e1e1e;
+            --bg: #0f0f0f;
+            --paper: #111111;
+            --text: #e8e8e8;
+            --text-light: #bbbbbb;
+            --gold: #d4af37; /* Classic metallic gold accent */
+            --dark-gold: #b89b2e;
         }
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
+            line-height: 1.7;
         }
         header {
             height: 100vh;
-            min-height: 600px;
-            background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.9)), url('hero-background.jpg') center/cover no-repeat fixed; /* Replace with your own dark abstract waveform or studio photo */
+            min-height: 650px;
+            background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.95)), url('hero-classic.jpg') center/cover no-repeat fixed; /* Use a dark studio photo or subtle texture */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
+            border-bottom: 1px solid var(--gold);
         }
         .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 6.5rem;
             font-weight: 700;
+            letter-spacing: 8px;
             color: white;
-            text-shadow: 0 0 20px var(--accent);
-            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .logo-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 6px;
+            color: var(--gold);
+            margin-top: -10px;
         }
         .tagline {
-            font-size: 1.8rem;
-            color: var(--accent);
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            margin: 30px 0 40px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .cta {
-            padding: 15px 40px;
+            padding: 14px 42px;
             background: transparent;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-            font-size: 1.1rem;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            font-family: 'Inter', sans-serif-font;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             cursor: pointer;
             transition: all 0.4s;
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
         .cta:hover {
-            background: var(--accent);
+            background: var(--gold);
             color: black;
-            box-shadow: 0 0 30px rgba(0,255,157,0.5);
         }
-        section { padding: 100px 10%; }
+        section { padding: 120px 10%; background: var(--paper); }
+        #about, #clients { background: var(--bg); }
         h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
             color: white;
             position: relative;
+        }
+        h2::before {
+            content: '';
+            width: 80px;
+            height: 1px;
+            background: var(--gold);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         h2::after {
             content: '';
-            width: 100px;
-            height: 3px;
-            background: var(--accent);
+            width: 80px;
+            height: 1px;
+            background: var(--gold);
             position: absolute;
             bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
         }
-        #about, #services, #clients { background: var(--dark-gray); }
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            text-align: center;
+        }
+        .content p {
+            margin-bottom: 1.5rem;
+        }
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
+            gap: 50px;
+            max-width: 1100px;
             margin: 0 auto;
         }
         .card {
-            background: rgba(255,255,255,0.03);
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid rgba(0,255,157,0.2);
-            transition: transform 0.4s;
+            background: rgba(255,255,255,0.02);
+            padding: 40px 30px;
+            border: 1px solid rgba(212,175,55,0.15);
+            text-align: center;
         }
-        .card:hover { transform: translateY(-10px); }
         .card h3 {
-            color: var(--accent);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+            position: relative;
         }
-        ul { list-style: none; }
+        .card h3::after {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
+        }
         li {
             padding: 8px 0;
             position: relative;
-            padding-left: 25px;
+            padding-left: 20px;
         }
         li::before {
-            content: '▸';
-            color: var(--accent);
+            content: '⋅';
+            color: var(--gold);
             position: absolute;
             left: 0;
+            font-size: 1.5rem;
+            top: 4px;
         }
         #contact {
-            text-align: center;
             background: var(--bg);
+            text-align: center;
         }
-        #contact a {
-            color: var(--accent);
+        #contact h2 { margin-bottom: 40px; }
+        .email {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            color: var(--gold);
+            margin: 30px 0;
+        }
+        .email a {
+            color: var(--gold);
             text-decoration: none;
-            font-size: 1.5rem;
+            border-bottom: 1px solid transparent;
+            transition: border 0.3s;
         }
+        .email a:hover { border-bottom: 1px solid var(--gold); }
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 50px;
             background: black;
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            border-top: 1px solid var(--gold);
         }
         @media (max-width: 768px) {
-            .logo { font-size: 3.5rem; }
-            .tagline { font-size: 1.4rem; }
-            h2 { font-size: 2.8rem; }
+            .logo { font-size: 4.5rem; letter-spacing: 4px; }
+            .logo-sub { font-size: 1.4rem; }
+            h2 { font-size: 3.2rem; }
+            section { padding: 80px 8%; }
         }
     </style>
 </head>
 <body>
 
-    <header id="home">
+    <header>
         <div>
-            <h1 class="logo">TIGUER SOUND</h1>
-            <p class="tagline">World-Class Audio Engineering • New York</p>
-            <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Get In Touch</button>
+            <h1 class="logo">Tiguer Sound</h1>
+            <div class="logo-sub">New York</div>
+            <p class="tagline">Professional Audio Engineering • Mixing • Mastering • Recording</p>
+            <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Inquire</button>
         </div>
     </header>
 
     <section id="about">
         <h2>About</h2>
-        <div class="grid">
-            <div class="card">
-                <p>Tiguer Sound is a premium audio engineering studio led by award-winning engineer <strong>Dave Tiguer</strong>. With over 15 years in the industry, we specialize in delivering radio-ready mixes, masters, and productions for independent artists, major labels, film, TV, and advertising.</p>
-                <br>
-                <p>From platinum-selling records to Grammy-nominated projects, our obsessive attention to detail and cutting-edge techniques guarantee your music sounds massive on every system.</p>
-            </div>
+        <div class="content">
+            <p>Tiguer Sound is a boutique audio engineering studio led by award-winning engineer <strong>Dave Tiguer</strong>. With over fifteen years of experience working with major labels, independent artists, film, television, and advertising, we deliver exceptional sonic quality with meticulous attention to detail.</p>
+            <p>From platinum records to Grammy-nominated projects, our work is trusted by discerning clients who demand the highest standards in modern audio production.</p>
         </div>
     </section>
 
@@ -166,17 +220,17 @@
                 <ul>
                     <li>Stereo & Dolby Atmos mixing</li>
                     <li>Stem mixing</li>
-                    <li>Vocal tuning & alignment</li>
-                    <li>Analog summing available</li>
+                    <li>Vocal tuning & timing alignment</li>
+                    <li>Hybrid analog/digital workflows</li>
                 </ul>
             </div>
             <div class="card">
                 <h3>Mastering</h3>
                 <ul>
                     <li>High-end analog & digital mastering</li>
-                    <li>Mastered for Streaming (Apple, Spotify, etc.)</li>
-                    <li>Vinyl & CD prep</li>
-                    <li>DDP & reference masters</li>
+                    <li>Optimized for all streaming platforms</li>
+                    <li>Vinyl, CD, and broadcast preparation</li>
+                    <li>Reference masters & DDP images</li>
                 </ul>
             </div>
             <div class="card">
@@ -184,25 +238,25 @@
                 <ul>
                     <li>Full tracking sessions</li>
                     <li>Sound design & beat production</li>
-                    <li>Podcast production</li>
-                    <li>Voiceover & ADR</li>
+                    <li>Podcast & voiceover production</li>
+                    <li>ADR & post-production audio</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="clients">
-        <h2>Selected Clients & Credits</h2>
-        <div class="grid" style="text-align:center; font-size:1.2rem; color:var(--text-light);">
-            <div>Universal Music • Sony • Warner • Netflix • HBO • Adidas • Independent Artists Worldwide</div>
-            <!-- Add more or replace with your actual clients -->
+        <h2>Selected Clients</h2>
+        <div class="content" style="font-size:1.2rem; color:var(--text-light);">
+            Universal Music Group • Sony Music • Warner Music • Netflix • HBO • Adidas • Independent Artists Worldwide
         </div>
     </section>
 
     <section id="contact">
-        <h2>Let's Work Together</h2>
-        <p style="font-size:1.5rem; margin:40px 0;">hello@tiguersound.com<br>
-        <a href="mailto:hello@tiguersound.com">hello@tiguersound.com</a></p>
+        <h2>Contact</h2>
+        <div class="email">
+            <a href="mailto:hello@tiguersound.com">hello@tiguersound.com</a>
+        </div>
         <p>New York City • Available Worldwide</p>
     </section>
 
