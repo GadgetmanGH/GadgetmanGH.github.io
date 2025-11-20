@@ -32,12 +32,19 @@
             text-align: center;
             border-bottom: 1px solid var(--gold);
         }
+        header > div {
+            padding: 0 5vw; /* extra breathing room on narrow screens */
+        }
         .logo {
             font-size: 5rem;
             font-weight: 800;
             letter-spacing: 10px;
             color: white;
             text-transform: uppercase;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            max-width: 95vw;
         }
         .logo-sub {
             font-size: 1.4rem;
@@ -68,13 +75,12 @@
             background: var(--gold);
             color: black;
         }
-        section { 
-            padding: 120px 10%; 
+        section {
+            padding: 120px 10%;
         }
         #services, #contact {
             background: var(--paper);
         }
-
         /* ====================== ABOUT SECTION ====================== */
         #about {
             background: linear-gradient(to right, rgba(15,15,15,0.95) 0%, rgba(15,15,15,0.50) 50%, rgba(15,15,15,0.20) 100%),
@@ -98,10 +104,9 @@
             font-size: 1rem;
             line-height: 1.5;
         }
-
-        /* ====================== SECTION HEADINGS (smaller & centered) ====================== */
+        /* ====================== SECTION HEADINGS ====================== */
         h2 {
-            font-size: 3.2rem;          /* Reduced from 4rem */
+            font-size: 3.2rem;
             font-weight: 700;
             color: white;
             text-align: center;
@@ -128,7 +133,6 @@
             left: 50%;
             transform: translateX(-50%);
         }
-
         /* ====================== SERVICES SECTION ====================== */
         .grid {
             display: grid;
@@ -144,8 +148,8 @@
             text-align: center;
             transition: transform 0.3s;
         }
-        .card:hover { 
-            transform: translateY(-10px); 
+        .card:hover {
+            transform: translateY(-10px);
         }
         .card h3 {
             font-size: 1.8rem;
@@ -164,10 +168,10 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        ul { 
-            list-style: none; 
-            text-align: left; 
-            margin-top: 20px; 
+        ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
         }
         li {
             padding: 8px 0;
@@ -182,7 +186,6 @@
             font-size: 1.5rem;
             top: 4px;
         }
-
         /* ====================== CONTACT & BOOKING ====================== */
         #contact { text-align: center; }
         .email {
@@ -198,7 +201,6 @@
             transition: border 0.3s;
         }
         .email a:hover { border-bottom: 1px solid var(--gold); }
-
         footer {
             text-align: center;
             padding: 50px;
@@ -208,7 +210,7 @@
             border-top: 1px solid var(--gold);
         }
 
-        /* ====================== RESPONSIVE ====================== */
+        /* ====================== RESPONSIVE FIXES ====================== */
         @media (max-width: 992px) {
             .about-container { grid-template-columns: 1fr; }
             .about-text { text-align: center; }
@@ -216,21 +218,37 @@
                 background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.85)), url('Dave - Darkhorse3.png') center/cover no-repeat fixed;
             }
         }
+
         @media (max-width: 768px) {
-            .logo { font-size: 4.8rem; letter-spacing: 5px; }
-            .logo-sub { font-size: 1.2rem; }
+            .logo { 
+                font-size: clamp(2.5rem, 14vw, 4.5rem);
+                letter-spacing: 0.05em;
+            }
+            .logo-sub { 
+                font-size: 1rem; 
+                letter-spacing: 0.15em;
+            }
+            .tagline {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
             h2 { font-size: 2.8rem; }
             section { padding: 80px 8%; }
             .grid { grid-template-columns: 1fr; }
             #about { background-attachment: scroll; }
         }
+
+        @media (max-width: 480px) {
+            .logo {
+                letter-spacing: 0.03em;
+            }
+        }
     </style>
 </head>
 <body>
-
     <header>
         <div>
-            <h1 class="logo">Tiguer Sound</h1>
+            <h1 class="logo">Tiguersound</h1>
             <div class="logo-sub">Audio Engineering • Mixing • Mastering • Recording</div>
             <p class="tagline">Supporting independent music artists<br>
                 Specializing in remote/virtual collaboration <br>
@@ -248,7 +266,7 @@
             <div class="about-text">
                 <p>TiguerSound is a mixing and mastering studio run by audio engineer <strong>Dave Tigue</strong></p>
                 <p>Dave has been mixing, mastering, and producing for over 25 years. <br>
-                    Operating from his home studio, he specializes in remote collaboration with        artists and musicians. Dave brings a wealth of practical knowledge and expertise in hardware, software, multiple digital audio workstations, and live sound. <br>
+                    Operating from his home studio, he specializes in remote collaboration with artists and musicians. Dave brings a wealth of practical knowledge and expertise in hardware, software, multiple digital audio workstations, and live sound. <br>
                     His impressive portfolio includes work on award-winning films and commercials, as well as years of audio editing for championship winning dance and figure skating competitors. Dave has collaborated with numerous artists to bring their songs from idea to reality, mixing and mastering hundreds of tracks throughout his career.</p>
             </div>
             <div class="about-image-space"></div>
@@ -312,6 +330,5 @@
     <footer>
         © 2025 TiguerSound. All rights reserved.
     </footer>
-
 </body>
 </html>
