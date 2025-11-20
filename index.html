@@ -71,22 +71,18 @@
         section { 
             padding: 120px 10%; 
         }
-        #about, #clients { 
-            background: var(--bg); 
-        }
         #services, #contact {
             background: var(--paper);
         }
 
-        /* About section – lighter overlay + text on the left */
+        /* ====================== ABOUT SECTION ====================== */
         #about {
-            background: linear-gradient(to right, rgba(15,15,15,0.92) 30%, rgba(15,15,15,0.45) 70%), 
-                        url('Dave-Darkhores.jpg') center/cover no-repeat fixed;
+            background: linear-gradient(to right, rgba(15,15,15,0.95) 0%, rgba(15,15,15,0.95) 45%, rgba(15,15,15,0.35) 100%),
+                        url('Dave - Darkhorse.jpg') right center / cover no-repeat fixed;
             background-attachment: fixed;
-            display: flex;
-            align-items: center;
+            position: relative;
         }
-        .about-wrapper {
+        .about-container {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
@@ -94,32 +90,25 @@
             gap: 80px;
             align-items: center;
         }
+        .about-header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
         .about-text {
-            padding-right: 40px;
-        }
-        .about-text h2 {
-            text-align: left;
-            margin-bottom: 40px;
-        }
-        .about-text h2::before,
-        .about-text h2::after {
-            left: 0;
-            transform: none;
+            font-size: 1.2rem;
+            line-height: 1.8;
         }
         .about-image-space {
-            height: 100%;
+            /* empty column so the photo shows on the right */
         }
 
         h2 {
             font-size: 4rem;
             font-weight: 700;
-            text-align: center;
-            margin-bottom: 35px;
             color: white;
             position: relative;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 1100px;
+            margin-bottom: 35px;
         }
         h2::before {
             content: '';
@@ -141,22 +130,18 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        .content {
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: 1.15rem;
-            text-align: center;
-        }
+
+        /* ====================== SERVICES SECTION ====================== */
         .grid {
             display: grid;
-            grid-template-columns5 repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            max-width: 1100;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         .card {
             background: rgba(255,255,255,0.02);
-            padding: 40px 30px;
+            padding: 40px 28px;
             border: 1px solid rgba(212,175,55,0.15);
             text-align: center;
             transition: transform 0.3s;
@@ -165,7 +150,7 @@
             transform: translateY(-10px); 
         }
         .card h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--gold);
             margin-bottom: 25px;
@@ -199,9 +184,9 @@
             font-size: 1.5rem;
             top: 4px;
         }
-        #contact { 
-            text-align: center; 
-        }
+
+        /* ====================== CONTACT & FOOTER ====================== */
+        #contact { text-align: center; }
         .email {
             font-size: 2.6rem;
             font-weight: 600;
@@ -214,9 +199,8 @@
             border-bottom: 1px solid transparent;
             transition: border 0.3s;
         }
-        .email a:hover { 
-            border-bottom: 1px solid var(--gold); 
-        }
+        .email a:hover { border-bottom: 1px solid var(--gold); }
+
         footer {
             text-align: center;
             padding: 50px;
@@ -225,32 +209,23 @@
             font-size: 0.95rem;
             border-top: 1px solid var(--gold);
         }
+
+        /* ====================== RESPONSIVE ====================== */
         @media (max-width: 992px) {
-            .about-wrapper {
+            .about-container {
                 grid-template-columns: 1fr;
-                gap: 40px;
             }
-            .about-text {
-                padding-right: 0;
-                text-align: center;
-            }
-            .about-text h2 {
-                text-align: center;
-            }
-            .about-text h2::before,
-            .about-text h2::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
+            .about-text { text-align: center; }
             #about {
                 background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.85)), url('Dave - Darkhorse.jpg') center/cover no-repeat fixed;
             }
         }
         @media (max-width: 768px) {
             .logo { font-size: 4.8rem; letter-spacing: 5px; }
-            .logo-sub { font-size: 1.2rem; letter-spacing: 6px; }
+            .logo-sub { font-size: 1.2rem; }
             h2 { font-size: 3.2rem; }
             section { padding: 80px 8%; }
+            .grid { grid-template-columns: 1fr; }
             #about { background-attachment: scroll; }
         }
     </style>
@@ -268,19 +243,21 @@
         </div>
     </header>
 
+    <!-- ABOUT SECTION -->
     <section id="about">
-        <div class="about-wrapper">
-            <div class="about-text">
+        <div class="about-container">
+            <div class="about-header">
                 <h2>About</h2>
-                <div style="font-size:1.2rem; line-height:1.8;">
-                    <p>TiguerSound is an audio engineering studio led by engineer <strong>Dave Tigue</strong>.</p>
-                    <p>Trusted by those who demand the highest standards in modern audio production.</p>
-                </div>
             </div>
-            <div class="about-image-space"></div> <!-- Empty column so the photo shows through on the right -->
+            <div class="about-text">
+                <p>TiguerSound is an audio engineering studio led by engineer <strong>Dave Tigue</strong>.</p>
+                <p>Trusted by those who demand the highest standards in modern audio production.</p>
+            </div>
+            <div class="about-image-space"></div>
         </div>
     </section>
 
+    <!-- SERVICES SECTION -->
     <section id="services">
         <h2>Services</h2>
         <div class="grid">
@@ -313,9 +290,9 @@
 
     <section id="clients">
         <h2>Let's chat about your project!</h2>
-        <div class="content" style="font-size:1.3rem;">
+        <div style="text-align:center; font-size:1.3rem; margin-top:30px;">
             <a href="https://calendar.app.google/woB1pYK5DEzpw35o8" target="_blank" rel="noopener noreferrer" style="color:var(--gold); text-decoration:none; border-bottom:2px solid var(--gold);">
-                Book a meeting to talk! →
+                Book a free consultation →
             </a>
         </div>
     </section>
