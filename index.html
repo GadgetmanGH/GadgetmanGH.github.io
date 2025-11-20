@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TiguerSound | Audio Engineering, Mixing & Mastering</title>
     <meta name="description" content="Mixing, mastering, and recording services.">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Clean sans-serif fonts only -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #0f0f0f;
             --paper: #111111;
-            --text: #e8e8e8;
+  --text: #e8e8e8;
             --text-light: #bbbbbb;
-            --gold: #d4af37; /* Classic metallic gold accent */
-            --dark-gold: #b89b2e;
+            --gold: #d4af37;
         }
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
@@ -21,11 +21,12 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.7;
+            font-weight: 400;
         }
         header {
             height: 100vh;
             min-height: 650px;
-            background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.95)), url('Tiguersound mixer.jpg') center/cover no-repeat fixed; /* Use a dark studio photo or subtle texture */
+            background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.95)), url('Tiguersound mixer.jpg') center/cover no-repeat fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -33,36 +34,33 @@
             border-bottom: 1px solid var(--gold);
         }
         .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 6.5rem;
-            font-weight: 700;
-            letter-spacing: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 7rem;
+            font-weight: 800;
+            letter-spacing: 10px;
             color: white;
             text-transform: uppercase;
-          
         }
         .logo-sub {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 400;
-            letter-spacing: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: 8px;
             color: var(--gold);
-            margin-top: -10px;
+            margin-top: -15px;
         }
         .tagline {
-            font-size: 1.4rem;
-            margin: 30px 0 40px;
+            font-size: 1.35rem;
+            margin: 35px auto 45px;
             color: var(--text-light);
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.6;
         }
         .cta {
             padding: 14px 42px;
             background: transparent;
             border: 2px solid var(--gold);
             color: var(--gold);
-            font-family: 'Inter', sans-serif-font;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -73,11 +71,26 @@
             background: var(--gold);
             color: black;
         }
-        section { padding: 120px 10%; background: var(--paper); }
-        #about, #clients { background: var(--bg); }
+        section { 
+            padding: 120px 10%; 
+        }
+        #about, #clients { 
+            background: var(--bg); 
+        }
+        #services, #contact {
+            background: var(--paper);
+        }
+
+        /* About section with your background photo */
+        #about {
+            background: linear-gradient(rgba(15,15,15,0.75), rgba(15,15,15,0.85)), url('Dave-Darkhores.jpg') center/cover no-repeat fixed;
+            background-attachment: fixed;
+        }
+
         h2 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Inter', sans-serif;
             font-size: 4rem;
+            font-weight: 700;
             text-align: center;
             margin-bottom: 35px;
             color: white;
@@ -109,9 +122,6 @@
             font-size: 1.15rem;
             text-align: center;
         }
-        .content p {
-            margin-bottom: 1.5rem;
-        }
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -124,13 +134,15 @@
             padding: 40px 30px;
             border: 1px solid rgba(212,175,55,0.15);
             text-align: center;
+            transition: transform 0.3s;
         }
-        
-        .card:hover { transform: translateY(-10px); }
-        
+        .card:hover { 
+            transform: translateY(-10px); 
+        }
         .card h3 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Inter', sans-serif;
             font-size: 2rem;
+            font-weight: 700;
             color: var(--gold);
             margin-bottom: 25px;
             position: relative;
@@ -145,11 +157,10 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        
-        ul {
-            list-style: none;
-            text-align: left;
-            margin-top: 20px;
+        ul { 
+            list-style: none; 
+            text-align: left; 
+            margin-top: 20px; 
         }
         li {
             padding: 8px 0;
@@ -164,14 +175,13 @@
             font-size: 1.5rem;
             top: 4px;
         }
-        #contact {
-            background: var(--bg);
-            text-align: center;
+        #contact { 
+            text-align: center; 
         }
-        #contact h2 { margin-bottom: 40px; }
         .email {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.4rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 600;
             color: var(--gold);
             margin: 30px 0;
         }
@@ -181,7 +191,9 @@
             border-bottom: 1px solid transparent;
             transition: border 0.3s;
         }
-        .email a:hover { border-bottom: 1px solid var(--gold); }
+        .email a:hover { 
+            border-bottom: 1px solid var(--gold); 
+        }
         footer {
             text-align: center;
             padding: 50px;
@@ -191,10 +203,11 @@
             border-top: 1px solid var(--gold);
         }
         @media (max-width: 768px) {
-            .logo { font-size: 4.5rem; letter-spacing: 4px; }
-            .logo-sub { font-size: 1.4rem; }
+            .logo { font-size: 4.8rem; letter-spacing: 5px; }
+            .logo-sub { font-size: 1.2rem; letter-spacing: 6px; }
             h2 { font-size: 3.2rem; }
             section { padding: 80px 8%; }
+            #about { background-attachment: scroll; } /* Better mobile experience */
         }
     </style>
 </head>
@@ -202,7 +215,7 @@
 
     <header>
         <div>
-            <h1 class="logo">TiguerSound</h1>
+            <h1 class="logo">Tiguersound</h1>
             <div class="logo-sub">Audio Engineering • Mixing • Mastering • Recording</div>
             <p class="tagline">Supporting independent music artists<br>
                 Specializing in remote/virtual collaboration <br>
@@ -214,7 +227,7 @@
     <section id="about">
         <h2>About</h2>
         <div class="content">
-            <p>TiguerSound is an audio engineering studio led by engineer <strong>Dave Tigue</strong>. <br>
+            <p>TiguerSound is an audio engineering studio led by engineer <strong>Dave Tigue</strong>.<br>
                 Trusted by those who demand the highest standards in modern audio production.</p>
         </div>
     </section>
@@ -236,7 +249,6 @@
                     <li>Full mix or stem mastering</li>
                     <li>Optimized for all streaming platforms</li>
                     <li>CD and Vinyl mastering available</li>
-
                 </ul>
             </div>
             <div class="card">
@@ -250,14 +262,12 @@
         </div>
     </section>
 
-  
     <section id="clients">
         <h2>Let's chat about your project!</h2>
-        <div class="content" style="font-size:1.2rem; color:var(--text-light);">
-            <a href="https://calendar.app.google/woB1pYK5DEzpw35o8" 
-            target="_blank" 
-            rel="noopener noreferrer"
-               >Book a meeting </a>
+        <div class="content" style="font-size:1.3rem;">
+            <a href="https://calendar.app.google/woB1pYK5DEzpw35o8" target="_blank" rel="noopener noreferrer" style="color:var(--gold); text-decoration:none; border-bottom:2px solid var(--gold);">
+                Book a free consultation →
+            </a>
         </div>
     </section>
 
@@ -266,8 +276,10 @@
         <div class="email">
             <a href="mailto:tiguersound@gmail.com">TiguerSound@gmail.com</a>
         </div>
-        <div> Instagram @tiguersound_studio</div>
-       <div> @tiguersoundproductions </div> 
+        <div style="margin:20px 0; font-size:1.1rem;">
+            Instagram: @tiguersound_studio<br>
+            @tiguersoundproductions
+        </div>
         <p>Available Worldwide</p>
     </section>
 
